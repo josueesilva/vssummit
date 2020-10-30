@@ -1,7 +1,8 @@
-module.exports = async function (context, req) {
-  context.res = {
-    body: {
-      text: "VS Summit 2020"
-    }
-  };
-};
+module.exports = async function (context, req) {    
+    context.res = {
+        // status: 200, /* Defaults to 200 */
+        body: {
+            text: "VSSummit 2020"
+        }
+    };
+}

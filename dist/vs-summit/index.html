@@ -2,12 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>VsSummit</title>
+  <title>Vanilla JS App</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
-<script src="runtime.js" defer></script><script src="polyfills.js" defer></script><script src="styles.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
+  <main>  
+    <h1>Vanilla JS App</h1>
+    <p>Loading content from the API: <b id="name">...</b></p>
+  </main>
+  <script>  
+  (
+    async function(){
+      let {text} = await (await fetch(`/api/message`)).json();
+      document.querySelector('#name').textContent = text;
+    }()
+  )
+  </script></body>
 </html>
